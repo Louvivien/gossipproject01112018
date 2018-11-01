@@ -16,11 +16,7 @@
 		<%= f.text_area :content, class: 'form-control' %>
 	</div>
 
- <% if current_user %>
-        User ID:<%= current_user.id %>
-        User Name: <%= current_user.user_name %>
-        <%= f.hidden_field :user_id, value: current_user.id%>
-    <% end %>
+
 
 	<div class="form-group">
     	<%= f.submit "Valider", class: 'btn btn-dark' %>

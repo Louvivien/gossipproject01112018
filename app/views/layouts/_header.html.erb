@@ -12,8 +12,24 @@
       <li class="nav-item">
         <a class="nav-link" href="<%=new_gossip_path%>">Créer Gossip</a><span class="sr-only">(current)</span>
       </li>
-    </ul>
+
+
+
+ </ul>
   </div>
+
+<div class="navbar-right">
+      <% if @current_user %>
+  <span class="nav-item">Connecté: <%= @current_user.name %> </span>
+  <%= form_tag "/users/login", method: :delete do %>
+    <input type="submit" value="Déconnexion" />
+  <% end %>
+<% else %>
+  <a href="/users/login">S'identifier</a>
+<% end %>
+</div>
+
+   
 </nav>
 
 

@@ -6,9 +6,15 @@ class GossipsController < ApplicationController
 		@gossip = Gossip.new
 	end
 	def create
-		create_params = params.require(:gossip).permit(:title, :content, :anonymous_gossiper)
-		@gossip = Gossip.create!(create_params)
-		puts @gossip
+		
+		if @current_user
+			@gossip = Gossip.create!(title: params[:gossip][:title], content: params[:gossip][:content], anonymous_gossiper: params[:gossip][:anonymous_gossiper],  user_id: @current_user.id)
+		else
+			@gossip = Gossip.new
+			flash[:info] = "Veuillez vous identifier avant de créer un potin"
+			redirect_to "/users/login"
+
+		end
 	end
 
 	def show
@@ -20,15 +26,34 @@ class GossipsController < ApplicationController
 	end
 
 	def update
-		@gossip = Gossip.find(params[:id])
-		update_params = params.require(:gossip).permit(:title, :content, :anonymous_gossiper)
-		@gossip.update(update_params)
-		redirect_to gossips_path
+		if @current_user
+			@gossip = Gossip.find(params[:id])
+			@gossip = Gossip.update!(title: params[:gossip][:title], content: params[:gossip][:content], anonymous_gossiper: params[:gossip][:anonymous_gossiper], user_id: @current_user.id)
+			redirect_to gossips_path
+		else
+			@gossip = Gossip.new
+			flash[:info] = "Veuillez vous connecter afin de modifier un potin"
+			redirect_to "/users/login"
+		end
 	end
 
 	def destroy
+		
+	if @current_user
+
 		@gossip = Gossip.find(params[:id])
 	    @gossip.destroy
 	    redirect_to gossips_path
+
+		else
+			@gossip = Gossip.new
+			flash[:info] = "Veuillez vous identifier afin de supprimer un potin"
+			redirect_to "/users/login"
+
+		end
+
+
+
+
 	end
 end

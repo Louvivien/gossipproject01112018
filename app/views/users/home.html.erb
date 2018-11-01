@@ -1,8 +1,10 @@
 
-    <% if @current_user %>
+<% if @current_user %>
   <h1>Bienvenue <%= @current_user.name %> !</h1>
+  <%= form_tag "/users/login", method: :delete do %>
+    <input type="submit" value="Déconnexion" />
+  <% end %>
 <% else %>
   <h1>Bienvenue visiteur anonyme !</h1>
   <a href="/users/login">S'identifier</a>
 <% end %>
-     
