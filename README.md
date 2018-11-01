@@ -1,24 +1,20 @@
-# README
+# Gossip projet
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##Made by Priscille de la Tour @Pris Vivien Richaud @Vivien
 
-Things you may want to cover:
+This project are the first pages of our great app The Gossip Project which will revolutionize the web world!
 
-* Ruby version
+##Requirements:
 
-* System dependencies
+Ruby version : 2.5.1
+Ruby on Rails version : 5.2.1
+Clone the repo on your local machine using git clone git@github.com:Louvivien/gossipproject01112018.git
 
-* Configuration
+Run bundle install
 
-* Database creation
+##Online version:
+https://gossipproject01112018.herokuapp.com/users/login
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+##Password:
+name: "Victor", email: "victor@example.org", password: "admin"
+name: "Martin", email: "martin@example.org", password: "admin"
