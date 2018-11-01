@@ -8,6 +8,7 @@ class GossipsController < ApplicationController
 	def create
 		create_params = params.require(:gossip).permit(:title, :content, :anonymous_gossiper)
 		@gossip = Gossip.create!(create_params)
+		puts @gossip
 	end
 
 	def show

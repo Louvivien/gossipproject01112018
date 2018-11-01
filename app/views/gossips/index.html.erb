@@ -1,4 +1,14 @@
 <html>
+
+<% if @current_user %>
+  <h1>Bienvenue <%= @current_user.name %> !</h1>
+<% else %>
+  <h1>Bienvenue visiteur anonyme !</h1>
+  <a href="/users/login">S'identifier</a>
+<% end %>
+
+
+
     <h1>Les gossips</h1>
     <p>Voici tous les gossips</p>
     <table class="table">
@@ -16,7 +26,7 @@
             <tr>
                 <td><%= gossip.title %></td>
                 <td><%= gossip.content %></td>
-                <td><%= gossip.anonymous_goossiper%></td>
+                <td><%= gossip.anonymous_gossiper%></td>
                 <td>
                     <a href="<%= gossip_path(gossip.id) %>" class="btn btn-dark">Voir le gossip</a>
                     <a href="<%= edit_gossip_path(gossip.id) %>" class="btn btn-dark">Editer</a>

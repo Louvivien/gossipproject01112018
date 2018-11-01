@@ -3,7 +3,7 @@
 <%= form_for @gossip do |f|%>
 	<div class="form-group">
 		<label>Ton Pseudo</label>
-		<%= f.text_field :anonymous_goossiper, class: 'form-control' %>
+		<%= f.text_field :anonymous_gossiper, class: 'form-control' %>
 	</div>
 
 	<div class="form-group">
@@ -15,6 +15,12 @@
 		<label>Ecrit ton potin</label>
 		<%= f.text_area :content, class: 'form-control' %>
 	</div>
+
+ <% if current_user %>
+        User ID:<%= current_user.id %>
+        User Name: <%= current_user.user_name %>
+        <%= f.hidden_field :user_id, value: current_user.id%>
+    <% end %>
 
 	<div class="form-group">
     	<%= f.submit "Valider", class: 'btn btn-dark' %>
