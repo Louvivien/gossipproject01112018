@@ -15,6 +15,6 @@ Run bundle install
 ##Online version:
 https://gossipproject01112018.herokuapp.com/
 
-##Password:
-name: "Victor", email: "victor@example.org", password: "admin"
-name: "Martin", email: "martin@example.org", password: "admin"
+##Identifiants:
+Identifiants 1 : email: "victor@example.org", password: "admin"
+Identifiants 2 : email: "martin@example.org", password: "admin"
