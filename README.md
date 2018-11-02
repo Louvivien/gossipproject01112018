@@ -13,7 +13,7 @@ Clone the repo on your local machine using git clone git@github.com:Louvivien/go
 Run bundle install
 
 ##Online version:
-https://gossipproject01112018.herokuapp.com/users/login
+https://gossipproject01112018.herokuapp.com/
 
 ##Password:
 name: "Victor", email: "victor@example.org", password: "admin"
